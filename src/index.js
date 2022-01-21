@@ -1,12 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { Provider } from 'react-redux';
+import Navigator from './navigation';
 import store from './redux/store';
 
 export default function App() {
-  return (
-    <Provider store={store}>
-      <Text>News Portal</Text>
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Navigator />
+        </Provider>
+    );
 }
