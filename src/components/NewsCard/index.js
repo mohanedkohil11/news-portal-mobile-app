@@ -9,22 +9,22 @@ export default function NewsCard({ style, image, title, authorName, date, onPres
 
     return (
         <View style={[style, styles.container]}>
-            <TouchableOpacity onPress={onPress}>
+            <TouchableOpacity onPress={onPress} activeOpacity={0.9}>
                 <ImageBackground source={{ uri: image }} style={styles.blockImage}>
                     <View style={styles.body}>
-                        {authorName && (
+                        {!!authorName && (
                             <Text numberOfLines={1} style={styles.subtitle}>
                                 {authorName}
                             </Text>
                         )}
 
-                        {title && (
+                        {!!title && (
                             <Text style={styles.title} numberOfLines={3}>
                                 {title}
                             </Text>
                         )}
 
-                        {date && (
+                        {!!date && (
                             <Text style={[styles.subtitle, styles.alignStart]} numberOfLines={1}>
                                 {formattedDate}
                             </Text>

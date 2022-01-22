@@ -22,20 +22,24 @@ export default StyleSheet.create({
         height: '100%',
         justifyContent: 'flex-end',
     },
-    title: {
-        ...Typography.title2,
-        fontWeight: FontWeight.bold,
-        color: BaseColor.whiteColor,
-        marginBottom: 7,
-        alignSelf: 'flex-end',
-    },
-    subtitle: {
-        ...Typography.headline,
-        fontWeight: FontWeight.semibold,
-        color: BaseColor.whiteColor,
-        marginBottom: 7,
-        alignSelf: 'flex-end',
-    },
+    title: StyleSheet.flatten([
+        Typography.title2,
+        {
+            fontWeight: FontWeight.bold,
+            color: BaseColor.whiteColor,
+            marginBottom: 7,
+            alignSelf: 'flex-end',
+        },
+    ]),
+    subtitle: StyleSheet.flatten([
+        Typography.headline,
+        {
+            fontWeight: FontWeight.semibold,
+            color: BaseColor.whiteColor,
+            marginBottom: 7,
+            alignSelf: 'flex-end',
+        },
+    ]),
     alignStart: {
         alignSelf: 'flex-start',
     },
