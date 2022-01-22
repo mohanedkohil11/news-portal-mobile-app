@@ -1,9 +1,9 @@
 import { API } from '../../../api';
 import actionTypes from '../../actionTypes';
 
-export const getTopHeadlines = callback => {
+export const getTopHeadlines = (filters, callback) => {
     return async function (dispatch) {
-        await API.getTopHeadlines()
+        await API.getTopHeadlines(filters)
             .then(response => {
                 callback?.();
                 dispatch({
@@ -12,7 +12,14 @@ export const getTopHeadlines = callback => {
                 });
             })
             .catch(err => {
-                console.log('failed to getUserData', err);
+                console.log('failed to get news', err);
             });
+    };
+};
+
+export const setFilters = filters => {
+    return {
+        type: actionTypes.SET_FILTERS,
+        payload: filters,
     };
 };

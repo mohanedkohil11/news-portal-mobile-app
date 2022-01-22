@@ -1,5 +1,8 @@
 export const BaseColor = {
-    accent: '#607D8B',
+    primary: '#5DADE2',
+    primaryDark: '#1281ac',
+    primaryLight: '#68c9ef',
+    accent: '#FF8A65',
     background: 'white',
     card: '#F5F5F5',
     text: '#212121',

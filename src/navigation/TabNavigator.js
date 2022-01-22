@@ -6,6 +6,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BaseColor } from '../config';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +26,7 @@ export default function TabNavigator() {
     const screenOptions = ({ route }) => ({
         tabBarIcon: ({ color, size }) => getIcon({ color, size, route }),
         headerShown: false,
+        tabBarActiveTintColor: BaseColor.primary,
     });
 
     return (
