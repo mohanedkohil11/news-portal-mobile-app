@@ -1,4 +1,5 @@
 import React from 'react';
+import Filter from '../screens/Filter';
 import TabNavigator from './TabNavigator';
 import SourceNews from '../screens/SourceNews';
 import NewsDetails from '../screens/NewsDetails';
@@ -18,6 +19,7 @@ export default function Navigator() {
                 />
                 <RootStack.Screen name="Details" component={NewsDetails} />
                 <RootStack.Screen name="SourceNews" component={SourceNews} />
+                <RootStack.Screen name="Filter" component={Filter} />
             </RootStack.Navigator>
         </NavigationContainer>
     );
