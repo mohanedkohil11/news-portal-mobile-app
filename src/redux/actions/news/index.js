@@ -1,3 +1,4 @@
+import { Alert } from 'react-native';
 import { API } from '../../../api';
 import actionTypes from '../../actionTypes';
 
@@ -11,8 +12,8 @@ export const getTopHeadlines = (filters, callback) => {
                     payload: response.articles,
                 });
             })
-            .catch(err => {
-                console.log('failed to get news', err);
+            .catch(() => {
+                Alert.alert('Something went wrong!')
             });
     };
 };
