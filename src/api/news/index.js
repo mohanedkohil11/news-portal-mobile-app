@@ -1,3 +1,4 @@
+import { Alert } from 'react-native';
 import requester from '../requester';
 
 export const getTopHeadlines = async (
@@ -6,10 +7,11 @@ export const getTopHeadlines = async (
     // Get top headlines depending on country and category.
     try {
         const response = await requester.get(
-            `/top-headlines?country=${country}&category=${category}`,
+            `/top-headliness?country=${country}&category=${category}`,
         );
         return response.data;
     } catch (err) {
+        Alert.alert('Failed to load Top Headlines');
         return err;
     }
 };
