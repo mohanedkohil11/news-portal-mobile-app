@@ -26,3 +26,14 @@ export const getTopHeadlineSources = async () => {
         return err;
     }
 };
+
+export const getSourceNews = async sourceId => {
+    // Get top sources news.
+    try {
+        const response = await requester.get(`/top-headlines?sources=${sourceId}`);
+        return response.data;
+    } catch (err) {
+        Alert.alert('Failed to load Source news');
+        return err;
+    }
+};

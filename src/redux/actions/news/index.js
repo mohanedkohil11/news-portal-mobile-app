@@ -40,3 +40,19 @@ export const getTopHeadlinesSources = callback => {
             });
     };
 };
+
+export const getSourceNews = (sourceId, callback) => {
+    return async function (dispatch) {
+        await API.getSourceNews(sourceId)
+            .then(response => {
+                callback?.();
+                dispatch({
+                    type: actionTypes.GET_SOURCE_NEWS,
+                    payload: response.articles,
+                });
+            })
+            .catch(() => {
+                Alert.alert('Something went wrong!');
+            });
+    };
+};

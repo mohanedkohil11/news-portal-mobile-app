@@ -3,7 +3,7 @@ import actionTypes from '../../actionTypes';
 const initialState = {
     filters: { country: 'eg', category: 'business' },
     topHeadlines: [],
-    sources: [],
+    selectedSourceNews: [],
 };
 const news = (state = initialState, action) => {
     switch (action.type) {
@@ -21,6 +21,11 @@ const news = (state = initialState, action) => {
             return {
                 ...state,
                 topHeadlinesSources: action.payload,
+            };
+        case actionTypes.GET_SOURCE_NEWS:
+            return {
+                ...state,
+                selectedSourceNews: action.payload,
             };
         default:
             return state;
