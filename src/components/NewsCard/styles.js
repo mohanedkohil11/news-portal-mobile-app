@@ -43,4 +43,9 @@ export default StyleSheet.create({
     alignStart: {
         alignSelf: 'flex-start',
     },
+    author: {
+        backgroundColor: 'rgba(126, 126, 126, 0.5)',
+        padding: 5,
+        borderRadius: 5,
+    },
 });
