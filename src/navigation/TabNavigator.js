@@ -33,7 +33,7 @@ export default function TabNavigator() {
         <Tab.Navigator initialRouteName="Home" screenOptions={screenOptions}>
             <Tab.Screen name="Sources" component={Sources} />
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="History" component={History} />
+            <Tab.Screen name="History" component={History} options={{ unmountOnBlur: true }} />
         </Tab.Navigator>
     );
 }

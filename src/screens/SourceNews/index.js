@@ -5,11 +5,13 @@ import React, { useCallback, useEffect, useState, useLayoutEffect } from 'react'
 import { getSourceNews, cleanUpSourceNews } from '../../redux/actions/news';
 import { NewsCard } from '../../components';
 import styles from './styles';
+import { useNewsHistory } from '../../utils';
 
 export default function SourceNews({ navigation, route }) {
     const dispatch = useDispatch();
-    const [refreshing, setRefreshing] = useState(false); // refresh state
     const { id, name } = route.params;
+    const { updateHistoryByOne } = useNewsHistory();
+    const [refreshing, setRefreshing] = useState(false); // refresh state
     const { selectedSourceNews } = useSelector(state => state.news);
 
     const loadData = useCallback(() => {
@@ -21,6 +23,7 @@ export default function SourceNews({ navigation, route }) {
     const onCardPress = articleDetails => {
         // navigate to article details screen with article details as params
         navigation.navigate('Details', articleDetails);
+        updateHistoryByOne(articleDetails)
     };
 
     useEffect(() => {
