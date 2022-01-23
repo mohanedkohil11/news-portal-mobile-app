@@ -7,11 +7,22 @@ export const getTopHeadlines = async (
     // Get top headlines depending on country and category.
     try {
         const response = await requester.get(
-            `/top-headliness?country=${country}&category=${category}`,
+            `/top-headlines?country=${country}&category=${category}`,
         );
         return response.data;
     } catch (err) {
         Alert.alert('Failed to load Top Headlines');
+        return err;
+    }
+};
+
+export const getTopHeadlineSources = async () => {
+    // Get top headlines sources.
+    try {
+        const response = await requester.get('/top-headlines/sources');
+        return response.data;
+    } catch (err) {
+        Alert.alert('Failed to load Sources');
         return err;
     }
 };
