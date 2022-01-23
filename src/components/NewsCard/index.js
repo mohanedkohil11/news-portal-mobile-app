@@ -13,7 +13,7 @@ export default function NewsCard({ style, image, title, authorName, date, onPres
                 <ImageBackground source={{ uri: image }} style={styles.blockImage}>
                     <View style={styles.body}>
                         {!!authorName && (
-                            <Text numberOfLines={1} style={styles.subtitle}>
+                            <Text numberOfLines={1} style={[styles.subtitle, styles.author]}>
                                 {authorName}
                             </Text>
                         )}

@@ -13,5 +13,5 @@ export default StyleSheet.create({
         Typography.title3,
         { color: BaseColor.grayColor, marginLeft: 5 },
     ]),
-    flexOne: { flex: 1 }
+    flexOne: { flex: 1 },
 });
