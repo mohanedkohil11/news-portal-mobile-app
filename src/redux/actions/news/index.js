@@ -56,3 +56,9 @@ export const getSourceNews = (sourceId, callback) => {
             });
     };
 };
+
+export const cleanUpSourceNews = () => {
+    return {
+        type: actionTypes.CLEAN_UP_SOURCE_NEWS,
+    };
+};

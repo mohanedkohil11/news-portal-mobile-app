@@ -27,6 +27,11 @@ const news = (state = initialState, action) => {
                 ...state,
                 selectedSourceNews: action.payload,
             };
+        case actionTypes.CLEAN_UP_SOURCE_NEWS:
+            return {
+                ...state,
+                selectedSourceNews: [],
+            };
         default:
             return state;
     }
