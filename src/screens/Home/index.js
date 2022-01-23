@@ -19,6 +19,10 @@ export default function Home({ navigation }) {
         dispatch(getTopHeadlines(filters, () => setRefreshing(false)));
     }, [dispatch, filters]);
 
+    const onCardPress = articleDetails => {
+        // navigate to article details screen with article details as params
+        navigation.navigate('Details', articleDetails);
+    };
     useEffect(() => {
         //load data in initial load & on filters change
         loadData();
@@ -47,7 +51,7 @@ export default function Home({ navigation }) {
                                 date={item.publishedAt}
                                 image={item.urlToImage}
                                 title={item.title}
-                                onPress={() => { }}
+                                onPress={() => onCardPress(item)}
                             />
                         );
                     }}

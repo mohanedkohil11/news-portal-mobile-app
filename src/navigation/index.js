@@ -17,7 +17,11 @@ export default function Navigator() {
                     component={TabNavigator}
                     options={{ headerShown: false }}
                 />
-                <RootStack.Screen name="Details" component={NewsDetails} />
+                <RootStack.Screen
+                    name="Details"
+                    component={NewsDetails}
+                    options={{ headerShown: false }}
+                />
                 <RootStack.Screen name="SourceNews" component={SourceNews} />
                 <RootStack.Screen name="Filter" component={Filter} />
             </RootStack.Navigator>
