@@ -14,4 +14,5 @@ export default StyleSheet.create({
         { color: BaseColor.grayColor, marginLeft: 5 },
     ]),
     flexOne: { flex: 1 },
+    flexGrowOne: { flexGrow: 1 },
 });

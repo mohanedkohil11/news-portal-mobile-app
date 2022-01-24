@@ -8,6 +8,7 @@ import { useNewsHistory } from '../../utils';
 import { getTopHeadlines } from '../../redux/actions/news';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import styles from './styles';
+import EmptyState from '../../components/EmptyState';
 
 export default function Home({ navigation }) {
     const dispatch = useDispatch();
@@ -44,6 +45,8 @@ export default function Home({ navigation }) {
                 </TouchableOpacity>
 
                 <FlatList
+                    contentContainerStyle={styles.flexGrowOne}
+                    ListEmptyComponent={() => <EmptyState />}
                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadData} />}
                     scrollEventThrottle={1}
                     data={topHeadlines}
