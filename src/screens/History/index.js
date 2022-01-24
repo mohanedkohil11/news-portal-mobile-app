@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, View } from 'react-native';
 import { NewsCard } from '../../components';
 import { useNewsHistory } from '../../utils';
+import EmptyState from '../../components/EmptyState';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
 
@@ -17,6 +18,8 @@ export default function History({ navigation }) {
         <View style={styles.flexOne}>
             <SafeAreaView style={styles.flexOne}>
                 <FlatList
+                    contentContainerStyle={styles.flexGrowOne}
+                    ListEmptyComponent={() => <EmptyState />}
                     data={Object.values(newsHistory)}
                     initialNumToRender={10}
                     keyExtractor={item => item.title}
