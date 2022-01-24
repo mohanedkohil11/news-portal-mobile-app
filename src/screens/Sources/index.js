@@ -3,8 +3,9 @@ import { FlatList, RefreshControl, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTopHeadlinesSources } from '../../redux/actions/news';
-import styles from './styles';
 import SourceCard from '../../components/SourceCard';
+import EmptyState from '../../components/EmptyState';
+import styles from './styles';
 
 export default function Sources({ navigation }) {
     const dispatch = useDispatch();
@@ -31,6 +32,8 @@ export default function Sources({ navigation }) {
         <View style={styles.flexOne}>
             <SafeAreaView style={styles.flexOne}>
                 <FlatList
+                    contentContainerStyle={styles.flexGrowOne}
+                    ListEmptyComponent={() => <EmptyState />}
                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadData} />}
                     data={topHeadlinesSources}
                     initialNumToRender={10}
