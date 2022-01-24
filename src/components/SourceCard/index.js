@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { BaseColor } from '../../config';
 import styles from './styles';
 
 export default function SourceCard({ source, onPress }) {
@@ -13,7 +14,7 @@ export default function SourceCard({ source, onPress }) {
                     {source}
                 </Text>
 
-                <AntDesign name="right" size={20} />
+                <AntDesign name="right" size={20} color={BaseColor.text} />
             </View>
         </TouchableOpacity>
     );

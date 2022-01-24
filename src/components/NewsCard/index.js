@@ -19,7 +19,7 @@ export default function NewsCard({ style, image, title, authorName, date, onPres
                         )}
 
                         {!!title && (
-                            <Text style={styles.title} numberOfLines={3}>
+                            <Text style={styles.title} numberOfLines={2}>
                                 {title}
                             </Text>
                         )}

@@ -23,12 +23,11 @@ export default StyleSheet.create({
         justifyContent: 'flex-end',
     },
     title: StyleSheet.flatten([
-        Typography.title2,
+        Typography.headline,
         {
             fontWeight: FontWeight.bold,
             color: BaseColor.whiteColor,
             marginBottom: 7,
-            alignSelf: 'flex-end',
         },
     ]),
     subtitle: StyleSheet.flatten([
