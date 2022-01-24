@@ -3,7 +3,8 @@ import { FlatList, RefreshControl, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useCallback, useEffect, useState, useLayoutEffect } from 'react';
 import { getSourceNews, cleanUpSourceNews } from '../../redux/actions/news';
-import { NewsCard } from '../../components';
+import { NewsCard } from '../../components/NewsCard';
+import EmptyState from '../../components/EmptyState';
 import styles from './styles';
 import { useNewsHistory } from '../../utils';
 
@@ -23,7 +24,7 @@ export default function SourceNews({ navigation, route }) {
     const onCardPress = articleDetails => {
         // navigate to article details screen with article details as params
         navigation.navigate('Details', articleDetails);
-        updateHistoryByOne(articleDetails)
+        updateHistoryByOne(articleDetails);
     };
 
     useEffect(() => {
@@ -40,6 +41,8 @@ export default function SourceNews({ navigation, route }) {
         <View style={styles.flexOne}>
             <SafeAreaView style={styles.flexOne}>
                 <FlatList
+                    contentContainerStyle={styles.flexGrowOne}
+                    ListEmptyComponent={() => <EmptyState />}
                     refreshControl={<RefreshControl refreshing={refreshing} onRefresh={loadData} />}
                     data={selectedSourceNews}
                     initialNumToRender={10}
